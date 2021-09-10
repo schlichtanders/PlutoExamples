@@ -54,20 +54,20 @@ md"""
 
 # ╔═╡ cff4e476-5b74-4eed-bea9-19a1e00ca9f1
 md"""
-# Rürupp
+# Rürup
 """
 
 # ╔═╡ c64d5784-b406-46a8-b0f8-d289a41ed726
 run_investment(input, pa, years) = input * (1+pa)^years
 
 # ╔═╡ ef0092b8-6576-43a2-a670-366875f6d09b
-rürupp_input = input_investition + input_investition * input_spitzensteuersatz
+rürup_input = input_investition + input_investition * input_spitzensteuersatz
 
 # ╔═╡ 08c8e427-3890-4b9b-9101-f00312f117ad
-rürupp_output = run_investment(rürupp_input, rendite_jährlich, zeitraum_jahre)
+rürup_output = run_investment(rürup_input, rendite_jährlich, zeitraum_jahre)
 
 # ╔═╡ a29ddaeb-c705-4c41-97ce-bad23844a1a7
-rürupp_ergebnis = rürupp_output * rente_gesamtanteil * (1 - output_spitzensteuersatz)
+rürup_ergebnis = rürup_output * rente_gesamtanteil * (1 - output_spitzensteuersatz)
 
 # ╔═╡ 3734b9bb-7c73-4ced-bc47-70df8276eb98
 md"""
@@ -84,15 +84,15 @@ private_output = run_investment(private_input, rendite_jährlich, zeitraum_jahre
 private_ergebnis = private_output * rente_gesamtanteil * (1 - rente_ertragsanteil * output_spitzensteuersatz)
 
 # ╔═╡ 2a1a7fc8-86bd-430b-83f7-38d8870eefb0
-private_ergebnis - rürupp_ergebnis
+private_ergebnis - rürup_ergebnis
 
 # ╔═╡ a1008702-47f5-42cd-baa2-d1b03d02a93f
-(private_ergebnis - rürupp_ergebnis) / rürupp_ergebnis 
+(private_ergebnis - rürup_ergebnis) / rürup_ergebnis 
 
 # ╔═╡ 4abba217-610b-46fa-864f-4bc8d3235014
 begin
-	x = ["Rürupp", "Private", "Gewinn Private"]
-	y = [rürupp_ergebnis, private_ergebnis, private_ergebnis - rürupp_ergebnis]
+	x = ["Rürup", "Private", "Gewinn Private"]
+	y = [rürup_ergebnis, private_ergebnis, private_ergebnis - rürup_ergebnis]
 	bar(x, y, group = x, legend = false, fillcolors = [
 			y[3] < 0 ? :green : :red,
 			y[3] > 0 ? :green : :red,
