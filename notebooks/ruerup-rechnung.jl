@@ -14,7 +14,7 @@ macro bind(def, element)
 end
 
 # ╔═╡ 371239b4-ea10-4838-9418-603268788487
-using PlutoUI; using Plots; plotlyjs();
+using PlutoUI; using Plots;
 
 # ╔═╡ 154a4358-b119-47f3-a378-dc4eff5edd9e
 md"""
