@@ -14,7 +14,11 @@ macro bind(def, element)
 end
 
 # ╔═╡ 371239b4-ea10-4838-9418-603268788487
-using PlutoUI; using Plots;
+begin
+    import Pkg
+    Pkg.activate("/home/jovyan")
+    using Plots, PlutoUI; plotlyjs()
+end
 
 # ╔═╡ 154a4358-b119-47f3-a378-dc4eff5edd9e
 md"""
